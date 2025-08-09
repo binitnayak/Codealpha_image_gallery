@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.filters button {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.filters button.active,
+.filters button:hover {
+  background: #333;
+  color: #fff;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: filter 0.3s;
+}
+.gallery-item:hover img {
+  filter: brightness(0.8) blur(1px);
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 30px; right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+.lightbox .prev { left: 40px; }
+.lightbox .next { right: 40px; }
+
+.lightbox-info {
+  position: absolute;
+  bottom: 20px;
+  color: #fff;
+  font-size: 16px;
+  background: rgba(0,0,0,0.7);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+  }
+  .lightbox .close,
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 28px;
+    padding: 8px 12px;
+  }
+  .lightbox-info {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
