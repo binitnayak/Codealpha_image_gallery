@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  
+  <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="nature">Nature</button>
+    <button data-filter="city">City</button>
+    <button data-filter="animals">Animals</button>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&h=300&fit=crop" alt="Beautiful mountain landscape">
+    </div>
+    <div class="gallery-item" data-category="city">
+      <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop" alt="Modern city skyline">
+    </div>
+    <div class="gallery-item" data-category="animals">
+      <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=400&h=300&fit=crop" alt="Cute cat portrait">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop" alt="Forest path">
+    </div>
+    <div class="gallery-item" data-category="city">
+      <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=300&fit=crop" alt="Urban architecture">
+    </div>
+    <div class="gallery-item" data-category="animals">
+      <img src="https://media.4-paws.org/5/4/4/c/544c2b2fd37541596134734c42bf77186f0df0ae/VIER%20PFOTEN_2017-10-20_164-3854x2667-1920x1329.jpg" alt="tiger">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Ocean sunset">
+    </div>
+    <div class="gallery-item" data-category="city">
+      <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400&h=300&fit=crop" alt="Night city lights">
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    <div class="lightbox-info">
+      <span class="image-counter"></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
